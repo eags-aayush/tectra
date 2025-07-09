@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Settings, Upload, Play, Zap, Globe, Moon, MapPin, Sliders, Github, Mail, Users, Sun } from 'lucide-react';
 import Logo from './assets/logo.png'; // Ensure you have a logo image in the assets folder
+import MoonImg from './assets/moon.webp'; // Ensure you have a moon image in the assets folder
 
 function App() {
   const [activeToggle, setActiveToggle] = useState('earth');
@@ -20,10 +21,6 @@ function App() {
 
   const runAnalysis = () => {
     console.log('Running analysis with config:', analysisConfig);
-  };
-
-  const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
   };
 
   // Enhanced color palette
@@ -104,15 +101,6 @@ function App() {
 
             {/* Settings */}
             <div className="flex items-center space-x-2">
-              <button
-                onClick={toggleTheme}
-                className={`p-2 rounded-lg transition-all duration-200 hover:bg-slate-700/50 ${isDarkTheme
-                    ? 'text-slate-400 hover:text-amber-400'
-                    : 'text-slate-600 hover:text-blue-600 hover:bg-slate-100'
-                  }`}
-              >
-                {isDarkTheme ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
-              </button>
               <button className={`p-2 rounded-lg transition-all duration-200 hover:bg-slate-700/50 ${theme.text.muted} hover:text-cyan-400 ${!isDarkTheme && 'hover:bg-slate-100'}`}>
                 <Settings className="h-6 w-6" />
               </button>
@@ -214,12 +202,12 @@ function App() {
 
                 <div className="flex justify-center space-x-8">
                   <div className="flex items-center space-x-3">
-                    <div className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg"></div>
-                    <span style={{ color: '#fff' }}>Before image (0)</span>
+                    <div className=" w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg"></div>
+                    <span className={isDarkTheme ? 'text-white' : 'text-black'}>Before image (0)</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-4 h-4 bg-gradient-to-r from-rose-400 to-red-500 rounded-full shadow-lg"></div>
-                    <span style={{ color: '#fff' }}>After image (0)</span>
+                    <span className={isDarkTheme ? 'text-white' : 'text-black'}>After image (0)</span>
                   </div>
                 </div>
               </div>
