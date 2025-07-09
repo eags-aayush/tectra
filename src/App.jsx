@@ -201,13 +201,17 @@ function App() {
                 </div>
 
                 <div className="flex justify-center space-x-8">
-                  <div className="flex items-center space-x-3">
-                    <div className=" w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg"></div>
-                    <span className={isDarkTheme ? 'text-white' : 'text-black'}>Before image (0)</span>
+                  <div className="border p-3 rounded-lg cursor-pointer flex items-center space-x-3">
+                    <div className="cursor-pointer w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg"></div>
+                    <button className={ `{isDarkTheme ? 'text-white' : 'text-black'}`}>Before image (0)</button>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-4 h-4 bg-gradient-to-r from-rose-400 to-red-500 rounded-full shadow-lg"></div>
-                    <span className={isDarkTheme ? 'text-white' : 'text-black'}>After image (0)</span>
+                  <div className="border p-3 rounded-lg cursor-pointer flex items-center space-x-3">
+                    <div className="cursor-pointer w-4 h-4 bg-gradient-to-r from-rose-400 to-red-500 rounded-full shadow-lg"></div>
+                    <button className={isDarkTheme ? 'text-white' : 'text-black'}>After image (0)</button>
+                  </div>
+
+                  <div>
+
                   </div>
                 </div>
               </div>
